@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy Hospital - Video Testimonials</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Main Variables and Base Styles */
+        :root {
+            --dark-brown: #664200;
+            --medium-brown: #916300;
+            --light-cream: #FEFBD9;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Video Testimonials Section */
+        .ivy-video-testimonials {
+            background-color: #fff;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ivy-video-testimonials::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--light-cream);
+            top: -150px;
+            right: -150px;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        /* Section Header */
+        .ivy-section-header {
+            position: relative;
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .ivy-section-tagline {
+            display: inline-block;
+            color: var(--medium-brown);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .ivy-section-heading {
+            color: var(--dark-brown);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .ivy-divider {
+            position: relative;
+            height: 20px;
+            width: 100%;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ivy-divider::before, .ivy-divider::after {
+            content: '';
+            height: 1px;
+            background-color: rgba(102, 66, 0, 0.2);
+            width: 80px;
+        }
+        
+        .ivy-divider-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            color: var(--medium-brown);
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .ivy-section-intro {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Video Grid */
+        .ivy-video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .ivy-video-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(102, 66, 0, 0.1);
+        }
+        
+        .ivy-video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(102, 66, 0, 0.15);
+        }
+        
+        .ivy-video-preview {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #f9f5e7;
+        }
+        
+        .ivy-video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .ivy-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .ivy-video-card:hover .ivy-thumbnail {
+            transform: scale(1.05);
+        }
+        
+        .ivy-video-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .ivy-video-card:hover .ivy-video-placeholder::after {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .ivy-custom-play-btn {
+            position: relative;
+            transition: all 0.4s ease;
+            transform-origin: center;
+            z-index: 3;
+        }
+        
+        .ivy-custom-play-btn svg {
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+            transition: all 0.4s ease;
+        }
+        
+        .ivy-video-card:hover .ivy-custom-play-btn {
+            transform: scale(1.1);
+        }
+        
+        .ivy-video-card:hover .ivy-custom-play-btn svg circle {
+            fill: #fffdf0;
+            stroke-width: 2;
+        }
+        
+        .ivy-video-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1;
+        }
+        
+        .ivy-video-info {
+            padding: 18px;
+            text-align: left;
+            border-top: 3px solid var(--light-cream);
+        }
+        
+        .ivy-video-info h4 {
+            color: var(--dark-brown);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .ivy-video-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .ivy-view-more-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--dark-brown);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid var(--dark-brown);
+            border-radius: 30px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+        
+        .ivy-view-more-btn i {
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .ivy-view-more-btn:hover {
+            background-color: var(--dark-brown);
+            color: white;
+        }
+        
+        .ivy-view-more-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .ivy-video-testimonials {
+                padding: 80px 0;
+            }
+            
+            .ivy-section-heading {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .ivy-video-testimonials {
+                padding: 60px 0;
+            }
+            
+            .ivy-section-heading {
+                font-size: 1.8rem;
+            }
+            
+            .ivy-divider::before, .ivy-divider::after {
+                width: 60px;
+            }
+            
+            .ivy-video-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (placeholder) -->
+   
+
+    <!-- Main Content -->
+    <main>
+        <!-- Video Testimonials Section -->
+        <section class="ivy-video-testimonials py-5">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="ivy-section-header">
+                            <span class="ivy-section-tagline">Patient Stories</span>
+                            <h2 class="ivy-section-heading">Video Testimonials</h2>
+                            <div class="ivy-divider">
+                                <span class="ivy-divider-icon"><i class="bi bi-play-circle"></i></span>
+                            </div>
+                            <p class="ivy-section-intro">Hear directly from our patients about their experiences and successful treatments at Artemis Hospital.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Grid -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="ivy-video-grid">
+                            <!-- Video Testimonial 1 -->
+                            <div class="ivy-video-card">
+                                <div class="ivy-video-preview">
+                                    <div class="ivy-video-placeholder" data-video-id="dQw4w9WgXcQ">
+                                        <img src="https://img.youtube.com/vi/YS1XZ0oGW7A/maxresdefault.jpg" alt="Rajiv's Heart Journey" class="ivy-thumbnail">
+                                        <div class="ivy-custom-play-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
+                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/YS1XZ0oGW7A?si=sw5xtgCJTQ7J3TjE" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="ivy-video-info">
+                                    <h4>Ms. Venantie Mukandinda</h4>
+                                    <p>Invasive valve procedure . 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Video Testimonial 2 -->
+                            <div class="ivy-video-card">
+                                <div class="ivy-video-preview">
+                                    <div class="ivy-video-placeholder" data-video-id="jNQXAC9IVRw">
+                                        <img src="https://img.youtube.com/vi/iK8B-WLfZ5k/maxresdefault.jpg
+                                        " alt="Priya's Recovery Story" class="ivy-thumbnail">
+                                        <div class="ivy-custom-play-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
+                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/iK8B-WLfZ5k?si=UICusiz1epT_1bVY" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="ivy-video-info">
+                                    <h4>Mr. Rambabu Sharma</h4>
+                                    <p>Heart Treatment</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Video Testimonial 3 -->
+                            <div class="ivy-video-card">
+                                <div class="ivy-video-preview">
+                                    <div class="ivy-video-placeholder" data-video-id="Mh4f9AYRCZY">
+                                        <img src="https://img.youtube.com/vi/vF2grMrPLqE/maxresdefault.jpg
+                                        " alt="Anil's Testimonial" class="ivy-thumbnail">
+                                        <div class="ivy-custom-play-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
+                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/vF2grMrPLqE?si=oG-qqu36zKoI1xwa" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="ivy-video-info">
+                                    <h4>Mr. Mohammed Tukur</h4>
+                                    <p>artery blockage</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Video Testimonial 4 -->
+                            <div class="ivy-video-card">
+                                <div class="ivy-video-preview">
+                                    <div class="ivy-video-placeholder" data-video-id="gug3R-bKTdM">
+                                        <img src="https://img.youtube.com/vi/KSpVelimCUI/maxresdefault.jpg
+                                        " alt="Meera's Experience" class="ivy-thumbnail">
+                                        <div class="ivy-custom-play-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
+                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/KSpVelimCUI?si=Y8tCr9qSMXI4ruGp" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="ivy-video-info">
+                                    <h4>Mr. LokRam Agarwal</h4>
+                                    <p>Pacemaker Implant</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- View More Button -->
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section (placeholder) -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Ivy Hospital</h5>
+                    <p>Providing exceptional healthcare with compassion and expertise.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <address>
+                        123 Healthcare Avenue<br>
+                        Punjab, India<br>
+                        Phone: +91 91829 00217<br>
+                        Email: care@ivyhospital.com
+                    </address>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 Ivy Hospital. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all video placeholders
+            const videoPlaceholders = document.querySelectorAll('.ivy-video-placeholder');
+            
+            // Add click event to each placeholder
+            videoPlaceholders.forEach(placeholder => {
+                placeholder.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    const iframe = parent.querySelector('.ivy-video-iframe');
+                    
+                    // Set the src attribute from data-src to load the video
+                    iframe.src = iframe.getAttribute('data-src');
+                    
+                    // Hide the placeholder
+                    this.style.opacity = '0';
+                    setTimeout(() => {
+                        this.style.display = 'none';
+                    }, 500);
+                });
+                
+                // Fallback for YouTube thumbnails
+                const thumbnailImg = placeholder.querySelector('.ivy-thumbnail');
+                thumbnailImg.addEventListener('error', function() {
+                    // If the maxresdefault.jpg fails, try the mqdefault.jpg (medium quality)
+                    const videoId = placeholder.getAttribute('data-video-id');
+                    this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                    
+                    // If that fails too, use a backup color
+                    this.addEventListener('error', function() {
+                        placeholder.removeChild(this);
+                        placeholder.style.backgroundColor = '#f9f5e7';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

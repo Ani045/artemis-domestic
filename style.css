@@ -2664,6 +2664,7 @@
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
+    border: 1px solid rgba(102, 66, 0, 0.1);
 }
 
 .ivy-video-card:hover {
@@ -2671,24 +2672,91 @@
     box-shadow: 0 15px 30px rgba(102, 66, 0, 0.15);
 }
 
-.ivy-youtube-embed {
+.ivy-video-preview {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
+    background-color: #f9f5e7;
 }
 
-.ivy-youtube-embed iframe {
+.ivy-video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.ivy-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.ivy-video-card:hover .ivy-thumbnail {
+    transform: scale(1.05);
+}
+
+.ivy-video-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.ivy-video-card:hover .ivy-video-placeholder::after {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ivy-custom-play-btn {
+    position: relative;
+    transition: all 0.4s ease;
+    transform-origin: center;
+    z-index: 3;
+}
+
+.ivy-custom-play-btn svg {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    transition: all 0.4s ease;
+}
+
+.ivy-video-card:hover .ivy-custom-play-btn {
+    transform: scale(1.1);
+}
+
+.ivy-video-card:hover .ivy-custom-play-btn svg circle {
+    fill: #fffdf0;
+    stroke-width: 2;
+}
+
+.ivy-video-iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    z-index: 1;
 }
 
 .ivy-video-info {
-    padding: 15px;
+    padding: 18px;
     text-align: left;
     border-top: 3px solid var(--light-cream);
 }
@@ -2715,8 +2783,9 @@
     padding: 12px 30px;
     border: 2px solid var(--dark-brown);
     border-radius: 30px;
-    margin-top: 20px;
+    margin-top: 30px;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 .ivy-view-more-btn i {
@@ -2733,71 +2802,6 @@
     transform: translateX(5px);
 }
 
-/* Video Modal */
-.ivy-video-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.ivy-video-modal.active {
-    display: flex;
-    opacity: 1;
-}
-
-.ivy-modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    background-color: black;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.ivy-modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    width: 36px;
-    height: 36px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1;
-    transition: all 0.3s ease;
-}
-
-.ivy-modal-close:hover {
-    transform: rotate(90deg);
-}
-
-.ivy-yt-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-}
-
-.ivy-yt-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 991px) {
     .ivy-video-testimonials {
@@ -2806,12 +2810,6 @@
     
     .ivy-section-heading {
         font-size: 2.2rem;
-    }
-    
-    .ivy-play-button {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
     }
 }
 
@@ -2824,25 +2822,11 @@
         font-size: 1.8rem;
     }
     
-    .ivy-play-button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+    .ivy-divider::before, .ivy-divider::after {
+        width: 60px;
     }
     
-    .ivy-patient-info h4 {
-        font-size: 1.2rem;
-    }
-    
-    .ivy-patient-info p {
-        font-size: 0.9rem;
-    }
-    
-    .ivy-video-thumbs {
-        gap: 10px;
-    }
-    
-    .ivy-thumb-item {
-        width: 120px;
+    .ivy-video-grid {
+        gap: 20px;
     }
 }
