@@ -2310,18 +2310,18 @@
 
 .ivy-book-btn {
     display: inline-block;
-    background-color: var(--accent-purple);
+    background-color: #664200;
     color: white;
     padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+    /* box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3); */
 }
 
 .ivy-book-btn:hover {
-    background-color: #7929c4;
+    background-color: #664200;
     transform: translateY(-3px);
     color: white;
     box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
@@ -2560,5 +2560,289 @@
     
     .ivy-copyright-text {
         text-align: center;
+    }
+}
+.ivy-video-testimonials {
+    background-color: #fff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ivy-video-testimonials::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: var(--light-cream);
+    top: -150px;
+    right: -150px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Section Header */
+.ivy-section-header {
+    position: relative;
+    margin-bottom: 60px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.ivy-section-tagline {
+    display: inline-block;
+    color: var(--medium-brown);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.ivy-section-heading {
+    color: var(--dark-brown);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.ivy-divider {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ivy-divider::before, .ivy-divider::after {
+    content: '';
+    height: 1px;
+    background-color: rgba(102, 66, 0, 0.2);
+    width: 80px;
+}
+
+.ivy-divider-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    color: var(--medium-brown);
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.ivy-section-intro {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Video Grid */
+.ivy-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+    animation: fadeIn 0.8s ease;
+}
+
+.ivy-video-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.ivy-video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(102, 66, 0, 0.15);
+}
+
+.ivy-youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.ivy-youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ivy-video-info {
+    padding: 15px;
+    text-align: left;
+    border-top: 3px solid var(--light-cream);
+}
+
+.ivy-video-info h4 {
+    color: var(--dark-brown);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ivy-video-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.ivy-view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--dark-brown);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid var(--dark-brown);
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.ivy-view-more-btn i {
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.ivy-view-more-btn:hover {
+    background-color: var(--dark-brown);
+    color: white;
+}
+
+.ivy-view-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Video Modal */
+.ivy-video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ivy-video-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.ivy-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    background-color: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ivy-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.ivy-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.ivy-yt-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.ivy-yt-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .ivy-video-testimonials {
+        padding: 80px 0;
+    }
+    
+    .ivy-section-heading {
+        font-size: 2.2rem;
+    }
+    
+    .ivy-play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .ivy-video-testimonials {
+        padding: 60px 0;
+    }
+    
+    .ivy-section-heading {
+        font-size: 1.8rem;
+    }
+    
+    .ivy-play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .ivy-patient-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .ivy-patient-info p {
+        font-size: 0.9rem;
+    }
+    
+    .ivy-video-thumbs {
+        gap: 10px;
+    }
+    
+    .ivy-thumb-item {
+        width: 120px;
     }
 }
