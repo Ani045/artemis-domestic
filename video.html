@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivy Hospital - Video Testimonials</title>
+    <title>Artemis Hospital - Our Specialists</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,15 +28,15 @@
             line-height: 1.6;
         }
         
-        /* Video Testimonials Section */
-        .ivy-video-testimonials {
+        /* Specialists Section */
+        .artemis-specialists-showcase {
             background-color: #fff;
             padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
         
-        .ivy-video-testimonials::before {
+        .artemis-specialists-showcase::before {
             content: '';
             position: absolute;
             width: 300px;
@@ -45,23 +45,42 @@
             background-color: var(--light-cream);
             top: -150px;
             right: -150px;
-            opacity: 0.5;
+            opacity: 0.6;
             z-index: 0;
         }
         
-        /* Section Header */
-        .ivy-section-header {
+        .artemis-specialists-showcase::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--light-cream);
+            bottom: -100px;
+            left: -100px;
+            opacity: 0.4;
+            z-index: 0;
+        }
+        
+        /* Header Styling */
+        .artemis-showcase-header {
             position: relative;
-            margin-bottom: 60px;
-            animation: fadeIn 1s ease;
+            margin-bottom: 70px;
+            animation: fadeInUp 1s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .ivy-section-tagline {
+        .artemis-showcase-tagline {
             display: inline-block;
             color: var(--medium-brown);
             font-weight: 600;
@@ -70,14 +89,14 @@
             letter-spacing: 1px;
         }
         
-        .ivy-section-heading {
+        .artemis-showcase-heading {
             color: var(--dark-brown);
             font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 25px;
         }
         
-        .ivy-divider {
+        .artemis-divider {
             position: relative;
             height: 20px;
             width: 100%;
@@ -87,14 +106,14 @@
             justify-content: center;
         }
         
-        .ivy-divider::before, .ivy-divider::after {
+        .artemis-divider::before, .artemis-divider::after {
             content: '';
             height: 1px;
             background-color: rgba(102, 66, 0, 0.2);
             width: 80px;
         }
         
-        .ivy-divider-icon {
+        .artemis-divider-icon {
             width: 40px;
             height: 40px;
             background-color: var(--light-cream);
@@ -106,395 +125,477 @@
             color: var(--medium-brown);
             font-size: 1.2rem;
             position: relative;
+            animation: pulse 2s infinite;
         }
         
-        .ivy-section-intro {
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(145, 99, 0, 0.3);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(145, 99, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(145, 99, 0, 0);
+            }
+        }
+        
+        .artemis-showcase-intro {
             color: #555;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 700px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        /* Video Grid */
-        .ivy-video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-            animation: fadeIn 0.8s ease;
-        }
-        
-        .ivy-video-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(102, 66, 0, 0.1);
-        }
-        
-        .ivy-video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(102, 66, 0, 0.15);
-        }
-        
-        .ivy-video-preview {
+        /* Specialists Gallery */
+        .artemis-specialists-gallery {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            background-color: #f9f5e7;
+            z-index: 1;
         }
         
-        .ivy-video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .artemis-specialist-profile {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             transition: all 0.4s ease;
-            z-index: 2;
-            overflow: hidden;
         }
         
-        .ivy-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .artemis-specialist-profile:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(102, 66, 0, 0.15);
+        }
+        
+        .col-lg-3:nth-child(1) .artemis-specialist-profile { animation-delay: 0.1s; }
+        .col-lg-3:nth-child(2) .artemis-specialist-profile { animation-delay: 0.3s; }
+        .col-lg-3:nth-child(3) .artemis-specialist-profile { animation-delay: 0.5s; }
+        .col-lg-3:nth-child(4) .artemis-specialist-profile { animation-delay: 0.7s; }
+        .col-lg-3:nth-child(5) .artemis-specialist-profile { animation-delay: 0.9s; }
+        
+        .artemis-specialist-portrait {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
             transition: all 0.5s ease;
         }
         
-        .ivy-video-card:hover .ivy-thumbnail {
-            transform: scale(1.05);
+        .artemis-portrait-wrapper {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
         }
         
-        .ivy-video-placeholder::after {
+        .artemis-portrait-wrapper::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .ivy-video-card:hover .ivy-video-placeholder::after {
-            background: rgba(0, 0, 0, 0.5);
-        }
-        
-        .ivy-custom-play-btn {
-            position: relative;
-            transition: all 0.4s ease;
-            transform-origin: center;
-            z-index: 3;
-        }
-        
-        .ivy-custom-play-btn svg {
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-            transition: all 0.4s ease;
-        }
-        
-        .ivy-video-card:hover .ivy-custom-play-btn {
-            transform: scale(1.1);
-        }
-        
-        .ivy-video-card:hover .ivy-custom-play-btn svg circle {
-            fill: #fffdf0;
-            stroke-width: 2;
-        }
-        
-        .ivy-video-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(102, 66, 0, 0.8) 100%);
+            opacity: 0;
+            transition: all 0.5s ease;
             z-index: 1;
         }
         
-        .ivy-video-info {
-            padding: 18px;
-            text-align: left;
-            border-top: 3px solid var(--light-cream);
+        .artemis-specialist-profile:hover .artemis-portrait-wrapper::before {
+            opacity: 1;
         }
         
-        .ivy-video-info h4 {
-            color: var(--dark-brown);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+        .artemis-portrait-wrapper img {
+            width: 100%;
+            height: auto;
+            transition: all 0.8s ease;
+            transform: scale(1);
+            object-fit: cover;
         }
         
-        .ivy-video-info p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0;
+        .artemis-specialist-profile:hover .artemis-portrait-wrapper img {
+            transform: scale(1.1);
         }
         
-        .ivy-view-more-btn {
-            display: inline-flex;
+        .artemis-specialist-decoration {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 100px;
+            height: 100px;
+            border-top: 3px solid var(--medium-brown);
+            border-left: 3px solid var(--medium-brown);
+            border-top-left-radius: 15px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .artemis-specialist-profile:hover .artemis-specialist-decoration {
+            opacity: 1;
+            animation: decorationExpand 0.5s ease forwards;
+        }
+        
+        @keyframes decorationExpand {
+            from {
+                width: 30px;
+                height: 30px;
+            }
+            to {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        .artemis-specialist-connects {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 2;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .artemis-specialist-profile:hover .artemis-specialist-connects {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .artemis-connect-link {
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
             color: var(--dark-brown);
-            font-weight: 600;
-            text-decoration: none;
-            padding: 12px 30px;
-            border: 2px solid var(--dark-brown);
-            border-radius: 30px;
-            margin-top: 30px;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            background-color: transparent;
+            transform: scale(0);
         }
         
-        .ivy-view-more-btn i {
-            margin-left: 8px;
-            transition: all 0.3s ease;
+        .artemis-specialist-profile:hover .artemis-connect-link {
+            animation: scaleIn 0.5s ease forwards;
         }
         
-        .ivy-view-more-btn:hover {
+        .artemis-specialist-profile:hover .artemis-connect-link:nth-child(1) { animation-delay: 0.1s; }
+        .artemis-specialist-profile:hover .artemis-connect-link:nth-child(2) { animation-delay: 0.2s; }
+        .artemis-specialist-profile:hover .artemis-connect-link:nth-child(3) { animation-delay: 0.3s; }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        
+        .artemis-connect-link:hover {
             background-color: var(--dark-brown);
             color: white;
+            transform: translateY(-3px);
         }
         
-        .ivy-view-more-btn:hover i {
-            transform: translateX(5px);
+        .artemis-specialist-details {
+            text-align: center;
+            padding: 20px 25px 30px;
+            transition: all 0.5s ease;
+            background-color: #fff;
+        }
+        
+        .artemis-specialist-name {
+            color: var(--dark-brown);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .artemis-specialist-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--medium-brown);
+            transition: all 0.5s ease;
+        }
+        
+        .artemis-specialist-profile:hover .artemis-specialist-name::after {
+            width: 50px;
+        }
+        
+        .artemis-specialist-role {
+            color: var(--medium-brown);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .artemis-btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .artemis-consult-btn {
+            flex: 1;
+            display: inline-block;
+            background-color: var(--light-cream);
+            color: var(--dark-brown);
+            padding: 10px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.4s ease;
+            border: 2px solid var(--light-cream);
+            text-align: center;
+        }
+        
+        .artemis-consult-btn:hover {
+            background-color: var(--dark-brown);
+            color: white;
+            border-color: var(--dark-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 66, 0, 0.15);
+        }
+        
+        .artemis-whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+        
+        .artemis-whatsapp-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+            color: white;
         }
         
         /* Responsive Adjustments */
         @media (max-width: 991px) {
-            .ivy-video-testimonials {
+            .artemis-specialists-showcase {
                 padding: 80px 0;
             }
             
-            .ivy-section-heading {
-                font-size: 2.2rem;
+            .artemis-showcase-heading {
+                font-size: 2.3rem;
+            }
+            
+            .artemis-specialist-profile {
+                max-width: 320px;
+                margin: 0 auto 40px;
+            }
+            
+            .artemis-specialist-role {
+                min-height: 70px;
             }
         }
         
         @media (max-width: 767px) {
-            .ivy-video-testimonials {
+            .artemis-specialists-showcase {
                 padding: 60px 0;
             }
             
-            .ivy-section-heading {
+            .artemis-showcase-heading {
                 font-size: 1.8rem;
             }
             
-            .ivy-divider::before, .ivy-divider::after {
+            .artemis-showcase-tagline {
+                font-size: 1rem;
+            }
+            
+            .artemis-divider::before, .artemis-divider::after {
                 width: 60px;
             }
             
-            .ivy-video-grid {
-                gap: 20px;
+            .artemis-specialist-role {
+                min-height: 80px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section (placeholder) -->
-   
-
-    <!-- Main Content -->
-    <main>
-        <!-- Video Testimonials Section -->
-        <section class="ivy-video-testimonials py-5">
-            <div class="container">
-                <!-- Section Header -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <div class="ivy-section-header">
-                            <span class="ivy-section-tagline">Patient Stories</span>
-                            <h2 class="ivy-section-heading">Video Testimonials</h2>
-                            <div class="ivy-divider">
-                                <span class="ivy-divider-icon"><i class="bi bi-play-circle"></i></span>
+    <!-- Artemis Doctors/Specialists Section -->
+    <section class="artemis-specialists-showcase py-5">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="artemis-showcase-header">
+                        <span class="artemis-showcase-tagline">Expert Medical Team</span>
+                        <h2 class="artemis-showcase-heading">Our Distinguished Cardiologists</h2>
+                        <div class="artemis-divider">
+                            <span class="artemis-divider-icon"><i class="bi bi-heart-pulse"></i></span>
+                        </div>
+                        <p class="artemis-showcase-intro">Bringing together years of specialized experience and international training to provide exceptional cardiac care with compassion and dedication.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Doctors Gallery -->
+            <div class="row artemis-specialists-gallery">
+                <!-- Specialist 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="artemis-specialist-profile">
+                        <div class="artemis-specialist-portrait">
+                            <div class="artemis-portrait-wrapper">
+                                <img src="assets/images/Amit.png" alt="Dr. Amit Kumar Chaurasia">
                             </div>
-                            <p class="ivy-section-intro">Hear directly from our patients about their experiences and successful treatments at Artemis Hospital.</p>
+                            <div class="artemis-specialist-decoration"></div>
+                            <div class="artemis-specialist-connects">
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="artemis-specialist-details">
+                            <h3 class="artemis-specialist-name">Dr. Amit Kumar Chaurasia</h3>
+                            <div class="artemis-specialist-role">Chief Cath Lab & TAVI (Unit I)</div>
+                            <div class="artemis-btn-group">
+                                <a href="#" class="artemis-consult-btn">Schedule Consultation</a>
+                                <a href="https://wa.me/919182900217" class="artemis-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Video Grid -->
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="ivy-video-grid">
-                            <!-- Video Testimonial 1 -->
-                            <div class="ivy-video-card">
-                                <div class="ivy-video-preview">
-                                    <div class="ivy-video-placeholder" data-video-id="dQw4w9WgXcQ">
-                                        <img src="https://img.youtube.com/vi/YS1XZ0oGW7A/maxresdefault.jpg" alt="Rajiv's Heart Journey" class="ivy-thumbnail">
-                                        <div class="ivy-custom-play-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
-                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/YS1XZ0oGW7A?si=sw5xtgCJTQ7J3TjE" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="ivy-video-info">
-                                    <h4>Ms. Venantie Mukandinda</h4>
-                                    <p>Invasive valve procedure . 
-                                    </p>
-                                </div>
+                <!-- Specialist 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="artemis-specialist-profile">
+                        <div class="artemis-specialist-portrait">
+                            <div class="artemis-portrait-wrapper">
+                                <img src="assets/images/Kul.png" alt="Dr. Kuldeep Arora">
                             </div>
-                            
-                            <!-- Video Testimonial 2 -->
-                            <div class="ivy-video-card">
-                                <div class="ivy-video-preview">
-                                    <div class="ivy-video-placeholder" data-video-id="jNQXAC9IVRw">
-                                        <img src="https://img.youtube.com/vi/iK8B-WLfZ5k/maxresdefault.jpg
-                                        " alt="Priya's Recovery Story" class="ivy-thumbnail">
-                                        <div class="ivy-custom-play-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
-                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/iK8B-WLfZ5k?si=UICusiz1epT_1bVY" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="ivy-video-info">
-                                    <h4>Mr. Rambabu Sharma</h4>
-                                    <p>Heart Treatment</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Testimonial 3 -->
-                            <div class="ivy-video-card">
-                                <div class="ivy-video-preview">
-                                    <div class="ivy-video-placeholder" data-video-id="Mh4f9AYRCZY">
-                                        <img src="https://img.youtube.com/vi/vF2grMrPLqE/maxresdefault.jpg
-                                        " alt="Anil's Testimonial" class="ivy-thumbnail">
-                                        <div class="ivy-custom-play-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
-                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/vF2grMrPLqE?si=oG-qqu36zKoI1xwa" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="ivy-video-info">
-                                    <h4>Mr. Mohammed Tukur</h4>
-                                    <p>artery blockage</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Video Testimonial 4 -->
-                            <div class="ivy-video-card">
-                                <div class="ivy-video-preview">
-                                    <div class="ivy-video-placeholder" data-video-id="gug3R-bKTdM">
-                                        <img src="https://img.youtube.com/vi/KSpVelimCUI/maxresdefault.jpg
-                                        " alt="Meera's Experience" class="ivy-thumbnail">
-                                        <div class="ivy-custom-play-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
-                                                <circle cx="12" cy="12" r="11" fill="#FEFBD9" stroke="#664200" stroke-width="1.5" />
-                                                <path d="M16 12l-6 4V8l6 4z" fill="#664200" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <iframe class="ivy-video-iframe" data-src="https://www.youtube.com/embed/KSpVelimCUI?si=Y8tCr9qSMXI4ruGp" title="Patient Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="ivy-video-info">
-                                    <h4>Mr. LokRam Agarwal</h4>
-                                    <p>Pacemaker Implant</p>
-                                </div>
+                            <div class="artemis-specialist-decoration"></div>
+                            <div class="artemis-specialist-connects">
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
-                        
-                        <!-- View More Button -->
-                        
+                        <div class="artemis-specialist-details">
+                            <h3 class="artemis-specialist-name">Dr. Kuldeep Arora</h3>
+                            <div class="artemis-specialist-role">Unit Head & Chief Cath Lab (Unit II)</div>
+                            <div class="artemis-btn-group">
+                                <a href="#" class="artemis-consult-btn">Schedule Consultation</a>
+                                <a href="https://wa.me/919182900217" class="artemis-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Section (placeholder) -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Ivy Hospital</h5>
-                    <p>Providing exceptional healthcare with compassion and expertise.</p>
+                
+                <!-- Specialist 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="artemis-specialist-profile">
+                        <div class="artemis-specialist-portrait">
+                            <div class="artemis-portrait-wrapper">
+                                <img src="assets/images/Sameer.png" alt="Dr. Sameer Mehrotra">
+                            </div>
+                            <div class="artemis-specialist-decoration"></div>
+                            <div class="artemis-specialist-connects">
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="artemis-specialist-details">
+                            <h3 class="artemis-specialist-name">Dr. Sameer Mehrotra</h3>
+                            <div class="artemis-specialist-role">Unit Chief Electrophysiology and Chief Cath Lab - (Unit III)</div>
+                            <div class="artemis-btn-group">
+                                <a href="#" class="artemis-consult-btn">Schedule Consultation</a>
+                                <a href="https://wa.me/919182900217" class="artemis-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <address>
-                        123 Healthcare Avenue<br>
-                        Punjab, India<br>
-                        Phone: +91 91829 00217<br>
-                        Email: care@ivyhospital.com
-                    </address>
+                
+                <!-- Specialist 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="artemis-specialist-profile">
+                        <div class="artemis-specialist-portrait">
+                            <div class="artemis-portrait-wrapper">
+                                <img src="assets/images/Rahul.png" alt="Dr. Rahul Mehrotra">
+                            </div>
+                            <div class="artemis-specialist-decoration"></div>
+                            <div class="artemis-specialist-connects">
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="artemis-specialist-details">
+                            <h3 class="artemis-specialist-name">Dr. Rahul Mehrotra</h3>
+                            <div class="artemis-specialist-role">Chief NIC & Clinical Cardiology (Unit IV)</div>
+                            <div class="artemis-btn-group">
+                                <a href="#" class="artemis-consult-btn">Schedule Consultation</a>
+                                <a href="https://wa.me/919182900217" class="artemis-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">About Us</a></li>
-                        <li><a href="#" class="text-white">Services</a></li>
-                        <li><a href="#" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2025 Ivy Hospital. All rights reserved.</p>
+                
+                <!-- Specialist 5 -->
+                <div class="col-lg-3 col-md-6 mx-auto">
+                    <div class="artemis-specialist-profile">
+                        <div class="artemis-specialist-portrait">
+                            <div class="artemis-portrait-wrapper">
+                                <img src="assets/images/Sus.png" alt="Dr. Sushant Srivastava">
+                            </div>
+                            <div class="artemis-specialist-decoration"></div>
+                            <div class="artemis-specialist-connects">
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="artemis-connect-link"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="artemis-specialist-details">
+                            <h3 class="artemis-specialist-name">Dr. Sushant Srivastava</h3>
+                            <div class="artemis-specialist-role">Chairperson Adult Cardiac Surgery & Heart Lung Transplant</div>
+                            <div class="artemis-btn-group">
+                                <a href="#" class="artemis-consult-btn">Schedule Consultation</a>
+                                <a href="https://wa.me/919182900217" class="artemis-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Bootstrap & jQuery JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all video placeholders
-            const videoPlaceholders = document.querySelectorAll('.ivy-video-placeholder');
-            
-            // Add click event to each placeholder
-            videoPlaceholders.forEach(placeholder => {
-                placeholder.addEventListener('click', function() {
-                    const parent = this.parentElement;
-                    const iframe = parent.querySelector('.ivy-video-iframe');
-                    
-                    // Set the src attribute from data-src to load the video
-                    iframe.src = iframe.getAttribute('data-src');
-                    
-                    // Hide the placeholder
-                    this.style.opacity = '0';
-                    setTimeout(() => {
-                        this.style.display = 'none';
-                    }, 500);
-                });
-                
-                // Fallback for YouTube thumbnails
-                const thumbnailImg = placeholder.querySelector('.ivy-thumbnail');
-                thumbnailImg.addEventListener('error', function() {
-                    // If the maxresdefault.jpg fails, try the mqdefault.jpg (medium quality)
-                    const videoId = placeholder.getAttribute('data-video-id');
-                    this.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-                    
-                    // If that fails too, use a backup color
-                    this.addEventListener('error', function() {
-                        placeholder.removeChild(this);
-                        placeholder.style.backgroundColor = '#f9f5e7';
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
