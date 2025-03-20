@@ -131,6 +131,7 @@
     /* Media query for mobile */
     @media screen and (max-width: 769px) {
         .whatsapp-float {
+            display: nonegit ;
             width: 50px;
             height: 50px;
             bottom: 20px;
@@ -145,7 +146,53 @@
         }
        
 
+    } 
+
+   
+    
+    @media only screen and (min-width:768px){
+        .mob{
+            display:none;
+        }
     }
+    
+    @media (max-width:767px) and (min-width:200px){
+        .mob{
+            display:block;
+        }
+        .copyright-wrap{
+            margin-bottom:56px;
+        }
+    }
+
+.custom-bottom-mob-nav {
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1002;
+    }
+
+    .custom-bottom-mob-nav-single-btn {
+        display: block;
+        color: black;
+        font-weight: 600;
+        border-right: 1px solid #e0e0e0;
+        border-top: 1px solid #e0e0e0;
+        font-size: 13px;
+    }
+
+    .custom-bottom-mob-nav-a {
+        text-decoration: none;
+        color: black;
+    }
+@media only screen and (max-width: 600px) {
+  .bp{
+      margin-bottom:80px;
+  }
+}
     </style>
     
 </head>
@@ -1098,7 +1145,64 @@
         </div>
     </section>
 
-    <a href="https://wa.me/919182900217" class="whatsapp-float" target="_blank">
+    <section class="mob">
+        <div class="container">
+            <div class="navbar-fixed-bottom hidden-md hidden-sm hidden-lg col-xs-12 custom-bottom-mob-nav">
+                <div class="hidden-md hidden-sm hidden-lg col-xs-12 bg-white">
+                    <div class="row no-gutters">
+                        <div class="col-3 p-0 custom-bottom-mob-nav-single-btn">
+                            <div class="d-flex justify-content-center align-items-center flex-column ">
+                                <a class="custom-bottom-mob-nav-a"
+                                    href="#"
+                                    data-abc="true"> <img src="assets/icons/home.png"
+                                        width="25"
+                                        alt="Call" />
+                                   <br> Home
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3 p-0 custom-bottom-mob-nav-single-btn">
+                            <div class="d-flex justify-content-center align-items-center flex-column ">
+                                <a class="custom-bottom-mob-nav-a"
+                                    href="whatsapp://send?text= &amp;phone=+919599285476"
+                                    data-abc="true">
+                                    <img src="assets/icons/whatsapp.png"
+                                        width="25"
+                                        alt="Whatsapp" />
+                                   <br> WhatsApp &nbsp;
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3 p-0 custom-bottom-mob-nav-single-btn">
+                            <div class="d-flex justify-content-center align-items-center flex-column ">
+                                <a class="custom-bottom-mob-nav-a"
+                                    href="tel:+918377867202"
+                                    data-abc="true"> <img src="assets/icons/communication.png"
+                                        width="25"
+                                        alt="Call" />
+                                     <br> Call Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3 p-0 custom-bottom-mob-nav-single-btn">
+                            <div class="d-flex justify-content-center align-items-center flex-column ">
+                                <a class="custom-bottom-mob-nav-a"
+                                    href="#form"
+                                    data-abc="true"> <img src="assets/icons/schedule.png"
+                                        width="25"
+                                        alt="Call" />
+                                      <br>  Book Appt.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <a href="https://wa.me/919599285476" class="whatsapp-float" target="_blank">
         <i class="bi bi-whatsapp"></i>
         <span class="tooltip">Chat with us</span>
     </a>
