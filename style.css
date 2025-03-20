@@ -167,7 +167,8 @@
         /* Hero Banner Section */
         .hero-section {
             position: relative;
-            background: linear-gradient(rgba(102, 66, 0, 0.85), rgba(145, 99, 0, 0.8)), url('https://via.placeholder.com/1920x800');
+            background:  url('assets/images/main-banner.png');
+            /* linear-gradient(rgba(102, 66, 0, 0.85), rgba(145, 99, 0, 0.8)), */
             background-size: cover;
             background-position: center;
             min-height: 600px;
@@ -175,6 +176,11 @@
             align-items: center;
             overflow: hidden;
             padding: 60px 0;
+        }
+        @media (max-width: 768px) {
+            .hero-section{
+                background: linear-gradient(rgba(102, 66, 0, 0.85), rgba(145, 99, 0, 0.8)) ;
+            }
         }
         
         .hero-shape {
@@ -2839,7 +2845,7 @@
     
     .col-lg-3.col-md-6 {
       width: 50%; /* 2 doctors per row */
-      padding: 0 8px;
+      /* padding: 0 8px; */
     }
     
     .ivy-specialist-profile {
@@ -2961,6 +2967,9 @@
     
     .learn-more {
       font-size: 0.85rem;
+    }
+    .stats-card{
+        display: none;
     }
   }
   
