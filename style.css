@@ -2831,7 +2831,7 @@
     }
 }
 /* Adjust doctors grid for smaller screens */
-@media (max-width: 767px) {
+@media (max-width: 769px) {
     .ivy-specialists-gallery {
       display: flex;
       flex-wrap: wrap;
@@ -2903,14 +2903,16 @@
     .ivy-whatsapp-btn i {
       margin-right: 0;
     }
+    .ivy-btn-group{
+        display: none !important;
+     }
   }
-  
+  /* Fix WhatsApp button positioning on desktop */
 @media (min-width :768px) {
     .ivy-specialist-connects{
         display: none !important;
     }
 }
-/* Adjustments for Enhanced Heart Treatments Section on mobile */
 @media (max-width: 767px) {
     .ivy-video-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -2923,7 +2925,7 @@
     }
     
     .treatment-cards-container .col-lg-4 {
-      width: 50%;
+      width: 33.3%;
       padding: 0 7px;
     }
     
