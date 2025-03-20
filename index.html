@@ -69,6 +69,81 @@
     box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
     color: white;
 }
+
+.whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25D366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        color: #FFF;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-float .tooltip {
+        position: absolute;
+        right: 70px;
+        background-color: #333;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent #333;
+    }
+
+    .whatsapp-float:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Media query for mobile */
+    @media screen and (max-width: 767px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            right: 20px;
+            font-size: 22px;
+        }
+        .form-icon{
+            display: none;
+        }
+        .form-container{
+            margin-top: 20px;
+        }
+    }
     </style>
     
 </head>
@@ -77,7 +152,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/icons/artemis-logo.png" width="160px"  alt="Artemis Hospital">
+                <img src="assets/icons/artemis-logo.png"   alt="Artemis Hospital">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
@@ -136,14 +211,14 @@
                         <h3 class="form-title">Get Free Second Opinion</h3>
                         <form>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class="form-group">
                                     <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="Your first name">
+                                    <input type="text" class="form-control" placeholder="Your name">
                                 </div>
-                                <div class="col-md-6 form-group">
+                                <!-- <div class="col-md-6 form-group">
                                     <label class="form-label">Last Name</label>
                                     <input type="text" class="form-control" placeholder="Your last name">
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Phone</label>
@@ -288,7 +363,7 @@
             
             <div class="row ivy-specialists-gallery">
                 <!-- Specialist 1 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="ivy-specialist-profile">
                         <div class="ivy-specialist-portrait">
                             <div class="ivy-portrait-wrapper">
@@ -296,9 +371,9 @@
                             </div>
                             <div class="ivy-specialist-decoration"></div>
                             <div class="ivy-specialist-connects">
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="ivy-specialist-details">
@@ -325,7 +400,7 @@
                 </div>
                 
                 <!-- Specialist 2 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="ivy-specialist-profile">
                         <div class="ivy-specialist-portrait">
                             <div class="ivy-portrait-wrapper">
@@ -333,9 +408,9 @@
                             </div>
                             <div class="ivy-specialist-decoration"></div>
                             <div class="ivy-specialist-connects">
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="ivy-specialist-details">
@@ -362,7 +437,7 @@
                 </div>
                 
                 <!-- Specialist 3 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="ivy-specialist-profile">
                         <div class="ivy-specialist-portrait">
                             <div class="ivy-portrait-wrapper">
@@ -370,9 +445,9 @@
                             </div>
                             <div class="ivy-specialist-decoration"></div>
                             <div class="ivy-specialist-connects">
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="ivy-specialist-details">
@@ -399,7 +474,7 @@
                 </div>
                 
                 <!-- Specialist 4 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="ivy-specialist-profile">
                         <div class="ivy-specialist-portrait">
                             <div class="ivy-portrait-wrapper">
@@ -407,9 +482,9 @@
                             </div>
                             <div class="ivy-specialist-decoration"></div>
                             <div class="ivy-specialist-connects">
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="ivy-specialist-details">
@@ -443,9 +518,9 @@
                             </div>
                             <div class="ivy-specialist-decoration"></div>
                             <div class="ivy-specialist-connects">
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="ivy-connect-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="ivy-specialist-details">
@@ -487,7 +562,7 @@
             
             <div class="treatment-cards-container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4  col-sm-6">
                         <div class="treatment-card">
                             <div class="card-icon-wrapper">
                                 <div class="card-icon">
@@ -517,7 +592,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="treatment-card">
                             <div class="card-icon-wrapper">
                                 <div class="card-icon">
@@ -532,7 +607,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="treatment-card">
                             <div class="card-icon-wrapper">
                                 <div class="card-icon">
@@ -547,7 +622,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="treatment-card">
                             <div class="card-icon-wrapper">
                                 <div class="card-icon">
@@ -562,7 +637,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="treatment-card">
                             <div class="card-icon-wrapper">
                                 <div class="card-icon">
@@ -683,86 +758,6 @@
                 </div>
             </div>
             
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="testimonial-slider">
-                        <div class="testimonial-header">
-                            <h3>What Our Patients Say</h3>
-                        </div>
-                        <div class="testimonial-carousel">
-                            <div class="testimonial-item active">
-                                <div class="testimonial-content">
-                                    <div class="quote-icon">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>The care I received at Artemis Hospital was exceptional. The cardiac team not only provided world-class treatment but also showed genuine compassion throughout my recovery journey.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <img src="assets/icons/man.png" alt="Patient">
-                                        </div>
-                                        <div class="author-info">
-                                            <h4>Rajesh Kumar</h4>
-                                            <p>Cardiac Bypass Patient</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="quote-icon">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>After my heart attack, I was scared and uncertain. The team at Artemis Hospital guided me through every step of my treatment with expertise and care that put me at ease. Today I'm healthier than ever.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <img src="assets/icons/woman.png" alt="Patient">
-                                        </div>
-                                        <div class="author-info">
-                                            <h4>Priya Sharma</h4>
-                                            <p>Heart Attack Survivor</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="testimonial-item">
-                                <div class="testimonial-content">
-                                    <div class="quote-icon">
-                                        <i class="bi bi-quote"></i>
-                                    </div>
-                                    <p>The minimally invasive procedure performed by the specialists at Artemis Hospital changed my life. I was back on my feet within days, and the follow-up care has been outstanding.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <img src="assets/icons/man.png" alt="Patient">
-                                        </div>
-                                        <div class="author-info">
-                                            <h4>Amit Patel</h4>
-                                            <p>Valve Repair Patient</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-controls">
-                            <div class="control-dots">
-                                <span class="dot active" onclick="currentSlide(1)"></span>
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <span class="dot" onclick="currentSlide(3)"></span>
-                            </div>
-                            <div class="control-arrows">
-                                <button class="prev-arrow" onclick="changeSlide(-1)">
-                                    <i class="bi bi-arrow-left"></i>
-                                </button>
-                                <button class="next-arrow" onclick="changeSlide(1)">
-                                    <i class="bi bi-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
       
     </section>
@@ -993,6 +988,11 @@
             
         </div>
     </section>
+
+    <a href="https://wa.me/919182900217" class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+        <span class="tooltip">Chat with us</span>
+    </a>
 
     <!-- Footer Section with Registration Banner -->
 <footer class="ivy-footer">
