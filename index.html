@@ -131,7 +131,7 @@
     /* Media query for mobile */
     @media screen and (max-width: 769px) {
         .whatsapp-float {
-            display: nonegit ;
+            display: none ;
             width: 50px;
             height: 50px;
             bottom: 20px;
@@ -327,7 +327,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="stat-item">
                             <i class="bi bi-stars stat-icon"></i>
-                            <div class="stat-value">1,00,000+</div>
+                            <div class="stat-value">1 Lakh+</div>
                             <div class="stat-label">Cardiac Surgeries</div>
                         </div>
                     </div>
@@ -430,7 +430,7 @@
                         </div>
                         <div class="ivy-specialist-details">
                             <h3 class="ivy-specialist-name">Dr. Sushant Srivastava</h3>
-                            <div class="ivy-specialist-role">Chairperson Adult Cardiac Surgery </div>
+                            <div class="ivy-specialist-role">Chairperson Adult Cardiac Surgery & Heart Lung Transplant </div>
                             <!-- <div class="ivy-specialist-badge">
                                 <div class="ivy-badge-item">
                                     <i class="bi bi-mortarboard-fill"></i>
@@ -442,7 +442,7 @@
                                 </div>
                             </div> -->
                             <div class="ivy-btn-group">
-                                <a href="#form" class="ivy-consult-btn">Schedule Consultation</a>
+                                <a href="#form" class="ivy-consult-btn">Book Appointment</a>
                                 <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
                                     <i class="bi bi-whatsapp"></i>
                                 </a>
@@ -479,7 +479,7 @@
                                 </div>
                             </div> -->
                             <div class="ivy-btn-group">
-                                <a href="#form" class="ivy-consult-btn">Schedule Consultation</a>
+                                <a href="#form" class="ivy-consult-btn">Book Appointment</a>
                                 <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
                                     <i class="bi bi-whatsapp"></i>
                                 </a>
@@ -516,7 +516,7 @@
                                 </div>
                             </div> -->
                             <div class="ivy-btn-group">
-                                <a href="#form" class="ivy-consult-btn">Schedule Consultation</a>
+                                <a href="#form" class="ivy-consult-btn">Book Appointment</a>
                                 <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
                                     <i class="bi bi-whatsapp"></i>
                                 </a>
@@ -553,7 +553,7 @@
                                 </div>
                             </div> -->
                             <div class="ivy-btn-group">
-                                <a href="#form" class="ivy-consult-btn">Schedule Consultation</a>
+                                <a href="#form" class="ivy-consult-btn">Book Appointment</a>
                                 <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
                                     <i class="bi bi-whatsapp"></i>
                                 </a>
@@ -591,7 +591,7 @@
                                 </div>
                             </div> -->
                             <div class="ivy-btn-group">
-                                <a href="#form" class="ivy-consult-btn">Schedule Consultation</a>
+                                <a href="#form" class="ivy-consult-btn">Book Appointment</a>
                                 <a href="https://wa.me/919599285476" class="ivy-whatsapp-btn">
                                     <i class="bi bi-whatsapp"></i>
                                 </a>
@@ -603,213 +603,175 @@
         </div>
     </section>
 
-    <section class="treatments-section pb-0">
+    <section class="cardio_treatments_section">
+        
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <div class="section-header">
-                        <h2 class="treatment-title">Comprehensive Heart Treatments Tailored to Your Needs</h2>
-                        <p class="treatment-subtitle">Our experienced doctors and surgeons at <span class="hospital-name">Artemis Hospital</span>, who specialize in different areas of heart care, diagnose and treat all kinds of heart diseases.</p>
+            <!-- Section Header -->
+            <div class="cardio_treatment_header">
+                <h2 class="cardio_treatment_title">Comprehensive Heart Treatments Tailored to Your Needs</h2>
+                <p class="cardio_treatment_subtitle">Our experienced doctors and surgeons at <span class="hospital_name">Artemis Hospital</span>, who specialize in different areas of heart care, diagnose and treat all kinds of heart diseases.</p>
+            </div>
+            
+            <!-- Treatment Cards -->
+            <div class="cardio_treatment_cards_container">
+                <div class="row g-4">
+                    <!-- Treatment 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/11.png" alt="Coronary Artery Bypass Surgery">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Coronary Artery Bypass Surgery</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 2 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/12.png" alt="Congenital Heart Surgery">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Congenital Heart Surgery</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 3 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/13.png" alt="Minimally Invasive Surgery">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Minimally Invasive Surgery</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 4 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/14.png" alt="Valve Repair">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Valve Repair</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 5 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/15.png" alt="Pacemaker">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Pacemaker</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 6 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/16.png" alt="Heart Attack">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Heart Attack</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 7 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/open heart.png" alt="Open Heart Surgery">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Open Heart Surgery</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 8 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/padiatric.png" alt="Pediatric Cardiology">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Pediatric Cardiology</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 9 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/pci.png" alt="PCI">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Pacemaker implantation </h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 10 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/cabg.png" alt="CABG">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Ventricular Assist Device (VAD) Implantation</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 11 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/aortic.png" alt="Aortic">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Aortic Aneurysm Repair</h3>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Treatment 12 -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                        <div class="cardio_treatment_card">
+                            <div class="cardio_icon_wrapper">
+                                <div class="cardio_icon">
+                                    <img src="assets/icons/atrial.png" alt="Atrial">
+                                </div>
+                            </div>
+                            <h3 class="cardio_treatment_name">Atrial Fibrillation Ablation</h3>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="treatment-cards-container">
-                <div class="row">
-                    <div class="col-lg-4  col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                   <img src="assets/icons/11.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Coronary Artery Bypass Surgery</h3>
-                            <div class="card-hover-content">
-                                <p>A surgical procedure to restore normal blood flow to an obstructed coronary artery.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/12.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Congenital Heart Surgery (ASD/VSD Surgery)</h3>
-                            <div class="card-hover-content">
-                                <p>Corrects heart defects such as holes in the heart. </p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/13.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Minimally Invasive Surgery</h3>
-                            <div class="card-hover-content">
-                                <p>Uses small incisions and specialized tools.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/14.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Valve Repair</h3>
-                            <div class="card-hover-content">
-                                <p>Repairs or replaces damaged heart valves.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/15.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Pacemaker</h3>
-                            <div class="card-hover-content">
-                                <p>Regulates heartbeat with a small implanted device.</p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/16.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Heart Attack</h3>
-                            <div class="card-hover-content">
-                                <p>Provides immediate care and treatment.</p>
-                        
-                            </div>
-                        </div>
-                    </div>
-                     
-
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/open heart.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">⁠Open Heart Surgery</h3>
-                            <div class="card-hover-content">
-                                <p>Traditional surgery where the chest is opened.  </p>
-                        
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/padiatric.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Pediatric Cardiology</h3>
-                            <div class="card-hover-content">
-                                <p>Diagnoses and manages heart conditions in children. </p>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/pci.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">PCI</h3>
-                            <div class="card-hover-content">
-                                <p>Opens blocked arteries using a catheter.
-                                </p>
-                        
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/cabg.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">CABG</h3>
-                            <div class="card-hover-content">
-                                <p> Improves blood flow to the heart by bypassing blocked arteries.                                </p>
-                        
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/aortic.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Aortic</h3>
-                            <div class="card-hover-content">
-                                <p>Surgical procedures performed on the aorta.</p>
-                        
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="treatment-card">
-                            <div class="card-icon-wrapper">
-                                <div class="card-icon">
-                                    <img src="assets/icons/atrial.png" width="120px" height="120px"> 
-                                </div>
-                            </div>
-                            <h3 class="treatment-name">Atrial</h3>
-                            <div class="card-hover-content">
-                                <p>Surgery performed on the upper chambers of the heart.  </p>
-                        
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-            
-           
         </div>
     </section>
 

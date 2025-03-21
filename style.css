@@ -740,292 +740,7 @@
                 font-size: 1.1rem;
             }
         }
-    .treatments-section {
-    background-color: var(--light-gray);
-    position: relative;
-    overflow: hidden;
-    padding: 80px 0;
-}
-
-.treatments-section::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(102, 66, 0, 0.03);
-    z-index: 0;
-}
-
-.treatments-section::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(102, 66, 0, 0.03);
-    z-index: 0;
-}
-
-.section-header {
-    position: relative;
-    margin-bottom: 60px;
-}
-
-.treatment-title {
-    color: var(--dark-brown);
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-}
-
-.treatment-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, var(--dark-brown), var(--medium-brown));
-    border-radius: 3px;
-}
-
-.treatment-subtitle {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hospital-name {
-    color: var(--medium-brown);
-    font-weight: 600;
-}
-
-.treatment-cards-container {
-    position: relative;
-    z-index: 1;
-    padding: 20px 0;
-}
-
-.treatment-card {
-    /* background-color: white; */
-    border-radius: 12px;
-    padding: 10px 10px;
-    text-align: center;
-    position: relative;
-    margin-bottom: 30px;
-    transition: all 0.4s ease;
-    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
-    cursor: pointer;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.treatment-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, var(--heart-red), var(--medium-brown));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.treatment-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    background-color: var(--light-cream);
-}
-
-.treatment-card:hover::before {
-    transform: scaleX(1);
-}
-
-.card-icon-wrapper {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.card-icon {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.4s ease;
-}
-
-.treatment-card:hover .card-icon {
-    transform: scale(1.1);
-}
-
-.treatment-name {
-    color: var(--dark-brown);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-hover-content {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-.treatment-card:hover .card-hover-content {
-    opacity: 1;
-    max-height: 150px;
-    margin-top: 15px;
-}
-
-.learn-more {
-    display: inline-block;
-    color: var(--medium-brown);
-    font-weight: 600;
-    margin-top: 10px;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.learn-more i {
-    transition: all 0.3s ease;
-}
-
-.learn-more:hover {
-    color: var(--dark-brown);
-}
-
-.learn-more:hover i {
-    transform: translateX(5px);
-}
-
-.all-treatments-btn {
-    display: inline-block;
-    background-color: var(--dark-brown);
-    color: white;
-    padding: 14px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(102, 66, 0, 0.2);
-}
-
-.all-treatments-btn:hover {
-    background-color: var(--medium-brown);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(102, 66, 0, 0.3);
-    color: white;
-}
-
-.all-treatments-btn i {
-    transition: all 0.3s ease;
-    margin-left: 5px;
-}
-
-.all-treatments-btn:hover i {
-    transform: translateX(5px);
-}
-
-/* SVG Animations */
-.pulse-path {
-    animation: dash 2s linear infinite;
-}
-
-@keyframes dash {
-    to {
-        stroke-dashoffset: -8;
-    }
-}
-
-.heartbeat {
-    animation: heartbeat 1.5s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-    15% {
-        transform: scale(1.05);
-    }
-    30% {
-        transform: scale(1);
-    }
-    45% {
-        transform: scale(1.05);
-    }
-    60% {
-        transform: scale(1);
-    }
-}
-
-.warning-flash {
-    animation: flash 2s ease-in-out infinite;
-}
-
-@keyframes flash {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-@media (max-width: 991px) {
-    .treatment-title {
-        font-size: 2.2rem;
-    }
     
-    .treatment-subtitle {
-        font-size: 1rem;
-    }
-    
-    .treatment-name {
-        min-height: auto;
-    }
-}
-
-@media (max-width: 767px) {
-    .treatments-section {
-        padding: 60px 0;
-    }
-    
-    .treatment-card {
-        padding: 25px 15px;
-    }
-    
-    .card-icon-wrapper {
-        width: 80px;
-        height: 80px;
-    }
-}
 .why-choose-section {
     position: relative;
     background-color: #fff;
@@ -2859,7 +2574,7 @@
     
     .ivy-specialist-role {
       font-size: 0.85rem;
-      min-height: 60px;
+      min-height: 80px;
     }
     
     .ivy-btn-group {
@@ -2925,26 +2640,8 @@
       gap: 15px;
     }
     
-    .treatment-cards-container .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
     
-    .treatment-cards-container .col-lg-4 {
-      width: 33.3%;
-      padding: 0 7px;
-    }
     
-    .treatment-card {
-      margin-bottom: 15px;
-      height: 100%;
-    }
-    
-    .treatment-name {
-      font-size: 1rem;
-      min-height: 44px;
-      line-height: 1.2;
-    }
     
     .feature-card {
       padding: 20px 15px;
@@ -2973,13 +2670,208 @@
     }
   }
   
-  /* Additional tablet-specific adjustments */
-  @media (min-width: 576px) and (max-width: 991px) {
-    .treatment-cards-container .col-lg-4 {
-      width: 50%;
+  .cardio_treatments_section {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(to bottom, rgba(254, 251, 217, 0.3), rgba(255, 255, 255, 1));
+    position: relative;
+}
+
+.cardio_treatment_header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.cardio_treatment_title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.cardio_treatment_title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--medium-brown), var(--dark-brown));
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.cardio_treatment_subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-brown);
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+}
+
+.hospital_name {
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+/* Treatment Cards */
+.cardio_treatment_cards_container {
+    position: relative;
+    z-index: 2;
+}
+
+.cardio_treatment_card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(102, 66, 0, 0.07);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 190px;
+    border: 1px solid rgba(102, 66, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardio_treatment_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(102, 66, 0, 0.1);
+}
+
+.cardio_icon_wrapper {
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardio_icon {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cardio_treatment_card:hover .cardio_icon {
+    transform: scale(1.05);
+}
+
+.cardio_icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.cardio_treatment_name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark-brown);
+    margin-bottom: 0;
+    min-height: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.cardio_treatment_card:hover .cardio_treatment_name {
+    color: var(--medium-brown);
+}
+
+.cardio_hover_content {
+    display: none;
+}
+
+/* No decorative elements */
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .cardio_treatment_title {
+        font-size: 1.8rem;
     }
     
-    .treatment-name {
-      min-height: 50px;
+    .cardio_treatment_subtitle {
+        font-size: 1rem;
     }
-  }
+    
+    .cardio_icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .cardio_treatment_name {
+        font-size: 0.95rem;
+        min-height: 2.3rem;
+    }
+    
+    .cardio_treatment_card {
+        height: 180px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .cardio_treatments_section {
+        padding: 3rem 0 2rem;
+    }
+    
+    .cardio_treatment_title {
+        font-size: 1.6rem;
+    }
+    
+    .cardio_treatment_card {
+        padding: 1rem 0.7rem;
+        height: 170px;
+    }
+    
+    .cardio_icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .cardio_treatment_name {
+        font-size: 0.9rem;
+        min-height: 2.1rem;
+    }
+    
+    .cardio_icon_wrapper {
+        margin-bottom: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .cardio_treatment_card {
+        height: 135px;
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .cardio_icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .cardio_treatment_name {
+        font-size: 0.75rem;
+        min-height: 2rem;
+    }
+    
+    .cardio_icon_wrapper {
+        margin-bottom: 0.6rem;
+    }
+    
+    .row.g-4 {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+}
